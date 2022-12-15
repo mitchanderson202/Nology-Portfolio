@@ -10,5 +10,7 @@ First Draft:
 - First attempt using BEM naming conventions.
 
 Check it out here:
+https://mitchanderson202.github.io/Nology-Portfolio/
 
 Repository here:
+https://github.com/mitchanderson202/Nology-Portfolio
