@@ -1,0 +1,227 @@
+@import "themes/styles.scss";
+
+// General
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: $font-color;
+  font-size: 1.5em;
+}
+
+h2 {
+  text-align: center;
+}
+
+// Grid wrapper
+#grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+// Navbar
+#c-nav {
+  background-color: $blue-color;
+  grid-column: 1/3;
+  // border: 1px solid $blue-accent;
+}
+
+.c-nav-ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.c-nav-ul-a {
+  background-color: $white-color;
+  border: 2px solid $blue-accent;
+  color: $font-color;
+  border-radius: 10em;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+
+// Header
+#c-header {
+  background-color: $white-color;
+  // border: 1px solid $white-accent;
+  grid-column: 1/3;
+  text-align: center;
+}
+
+#title {
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  animation: typing 6s steps(70, end);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+// About
+#c-about {
+  background-color: $red-accent;
+  // border: 1px solid $red-accent;
+  text-align: center;
+}
+
+// Tech Stack
+#c-stack {
+  background-color: $green-color;
+  // border: 1px solid $green-accent;
+  // text-align: center;
+  grid-column: 2/3;
+}
+
+.c-stack-ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1em;
+}
+
+// .c-stack-ul-li {
+//   // border: 1px solid $green-accent;
+// }
+
+.c-stack-ul-img {
+  height: 20px;
+  width: 20px;
+}
+
+// Projects
+#c-projects {
+  background-color: $white-color;
+  text-align: center;
+  grid-column: 1/3;
+  background-color: $white-color;
+}
+
+.c-projects-wrapper {
+  display: flex;
+}
+
+@mixin projects-section-LR {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: $red-color;
+}
+
+.c-projects-section-left {
+  @include projects-section-LR();
+}
+
+.c-projects-section-right {
+  @include projects-section-LR();
+  flex-direction: row-reverse;
+}
+
+.c-projects-section-img {
+  height: 300px;
+  width: 300px;
+}
+
+// Contact
+#c-contact {
+  background-color: $red-accent;
+  // border: 1px solid $red-accent;
+  text-align: center;
+  grid-column: 1/3;
+}
+
+.c-contact-nav-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.c-contact-nav-img {
+  height: 20px;
+  width: 20px;
+}
+
+.c-contact-nav-a {
+  text-decoration: none;
+  color: $font-color;
+  font-weight: bold;
+}
+
+// Footer
+#c-footer {
+  background-color: $blue-color;
+  // border: 1px solid $blue-accent;
+  text-align: center;
+  grid-column: 1/3;
+}
+
+.c-footer-link {
+  text-decoration: none;
+  color: $font-color;
+  font-weight: bold;
+}
+
+// Media Queries
+
+// Mobile
+//Used 800 for Tablet bugs. Change to 600 and add tablet MQ later.
+@media only screen and (max-width: 800px) {
+  // General
+  body {
+    font-size: 1em;
+  }
+
+  //Grid Wrapper
+  #grid-wrapper {
+    display: block;
+  }
+
+  // Navbar
+  .c-nav-ul-a {
+    border: 0;
+  }
+
+  // .c-nav-ul {
+  //   position: fixed;
+  // }
+
+  .c-nav-ul-a {
+    font-size: 1em;
+  }
+
+  #title {
+    font-size: 1.5em;
+  }
+
+  // Projects
+  .c-projects-section-img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .c-stack-ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+  }
+
+  // Footer
+  .c-footer-link {
+    border: 0;
+  }
+}
+
+// Tablet
